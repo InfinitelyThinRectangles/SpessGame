@@ -143,3 +143,12 @@
 	desc = "A lightweight utility knife made out of a titanium alloy."
 	material = /decl/material/solid/metal/titanium
 	draw_handle = FALSE
+
+// The harness knife
+/obj/item/knife/utility/harness
+	name = "utility knife"
+	desc = "A utility knife with a polymer handle, commonly used through human space."
+	icon = 'icons/obj/items/weapon/knives/utility.dmi'
+	max_force = 10
+	w_class = ITEM_SIZE_SMALL
+	draw_handle = FALSE

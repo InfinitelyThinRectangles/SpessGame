@@ -152,3 +152,21 @@
 		/obj/item/storage/pill_bottle
 	)
 
+/obj/item/clothing/accessory/storage/harness
+	name = "harness"
+	desc = "The standard issue harness of the expedition, found on just about everyone. You're gonna need this if you want to live another day."
+	icon_state = "harness"
+	slots = 2
+	max_w_class = ITEM_SIZE_NORMAL //for knives
+
+/obj/item/clothing/accessory/storage/harness/Initialize()
+	. = ..()
+	hold.can_hold = list(
+		/obj/item/storage/firstaid/ifak,
+		/obj/item/knife,
+	)
+
+	new /obj/item/knife/utility/harness(hold)
+	new /obj/item/storage/firstaid/ifak(hold)
+
+
