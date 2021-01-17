@@ -147,8 +147,9 @@
 // The harness knife
 /obj/item/knife/utility/harness
 	name = "utility knife"
+	icon_state = "knife"
 	desc = "A utility knife with a polymer handle, commonly used through human space."
-	icon = 'icons/obj/items/weapon/knives/utility.dmi'
-	max_force = 10
+	material = null // die, bay materials
+	force = 15
 	w_class = ITEM_SIZE_SMALL
 	draw_handle = FALSE
