@@ -29,6 +29,7 @@
 
 	var/mob/living/cameraFollow = null
 	var/list/datum/action/actions = list()
+	var/doing_something
 
 	var/update_slimes = 1
 	var/silent = null 		// Can't talk. Value goes down every life proc.

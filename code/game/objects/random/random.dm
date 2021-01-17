@@ -229,7 +229,7 @@
 				/obj/item/chems/food/snacks/egg/lizard = 3)
 
 /obj/random/drinkingglass
-	name = "random drinking glass" 
+	name = "random drinking glass"
 	desc = "This is a random drinking glass."
 	icon = 'icons/obj/drink_glasses/square.dmi'
 	icon_state = "square"
@@ -993,7 +993,7 @@ something, make sure it's not in one of the other lists.*/
 				/obj/structure/artifact = 1,
 				/obj/item/multitool/hacktool = 2,
 				/obj/item/surgicaldrill = 7,
-				/obj/item/sutures = 7,
+				/obj/item/suture = 7,
 				/obj/item/retractor = 7,
 				/obj/item/hemostat = 7,
 				/obj/item/cautery = 7,

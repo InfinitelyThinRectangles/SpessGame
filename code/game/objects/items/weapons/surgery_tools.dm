@@ -180,13 +180,83 @@
 
 /obj/item/sutures
 	name = "sutures"
-	desc = "Surgical needles and thread in a handy sterile package."
+	desc = "Precise surgical needles used for precise surgery."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "fixovein"
 	force = 0
 	throwforce = 1.0
 	origin_tech = "{'materials':1,'biotech':3}"
 	w_class = ITEM_SIZE_SMALL
+
+/obj/item/suture //ported from matt, thanks matt
+	name = "needle and sutures"
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "suture"
+	desc = "A larger than usual suture and thread used to close wounds."
+	gender = PLURAL
+	slot_flags = SLOT_EARS
+	force = 0
+	throwforce = 1
+	w_class = 2
+
+/obj/item/suture/attack(mob/living/carbon/human/H as mob, mob/living/userr, var/target_zone)//All of this is snowflake because surgery is broken.
+	//Checks if they're human, have a limb, and have the skill to fix it.
+	if(!ishuman(H))
+		return ..()
+	if(!ishuman(userr))
+		return ..()
+
+	var/mob/living/carbon/human/user = userr
+	var/obj/item/organ/external/affected = H.get_organ(target_zone)
+
+	if(!affected)
+		return ..()
+
+
+	if(!(affected.status & ORGAN_ARTERY_CUT) && !affected.wounds.len)//There is nothing to fix don't fix anything.
+		return
+
+	//Ok all the checks are over let's do the quick fix.
+	if(!user.doing_something)
+		user.doing_something = TRUE
+		if(affected.status & ORGAN_ARTERY_CUT)//Fix arteries first,
+			user.visible_message("<span class='notice'>[user] begins to suture [H]'s arteries.")
+	//		playsound(src, 'sound/weapons/suture.ogg', 70, FALSE)
+			if(do_mob(user, H, 50))
+				user.visible_message("<span class='notice'>[user] has patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name].</span>", \
+				"<span class='notice'>You have patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name].</span>")
+				affected.status &= ~ORGAN_ARTERY_CUT
+
+		else//Then fix wounds if they do it again.
+			for(var/datum/wound/W in affected.wounds)
+				if(W.damage)
+					user.visible_message("<span class='notice'>[user] begins to suture up [H]'s wounds.")
+				//	playsound(src, 'sound/weapons/suture.ogg', 40, FALSE)
+					H.custom_pain("The pain in your [affected.name] is unbearable!",rand(50, 65),affecting = affected)
+					if(do_mob(user, H, 50))
+						// Close it up to a point that it can be bandaged and heal naturally!
+						W.heal_damage(rand(5,20)+10)
+						if(W.damage >= W.autoheal_cutoff)
+							user.visible_message("<span class='notice'>\The [user] partially closes a wound on [H]'s [affected.name] with \the [src.name].</span>", \
+							"<span class='notice'>You partially close a wound on [H]'s [affected.name] with \the [src.name].</span>")
+						else
+							user.visible_message("<span class='notice'>\The [user] closes a wound on [H]'s [affected.name] with \the [src.name].</span>", \
+							"<span class='notice'>You close a wound on [H]'s [affected.name] with \the [src.name].</span>")
+							if(!W.damage)
+								affected.wounds -= W
+								qdel(W)
+							else if(W.damage <= 10)
+								W.clamped = 1
+				else
+					to_chat(user, "There are no wounds to patch up.")
+				break
+
+		affected.update_damages()
+		user.doing_something = FALSE
+		//else
+		//	user.doing_something = FALSE
+	else
+		to_chat(user, "You're already trying to suture them.")
 
 /obj/item/bonesetter
 	name = "bone setter"

@@ -177,4 +177,4 @@
 	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY
 	allowed = list(/obj/item/stack/medical, /obj/item/chems/dropper, /obj/item/chems/hypospray, /obj/item/chems/syringe, \
 	/obj/item/scanner/health, /obj/item/flashlight, /obj/item/radio, /obj/item/tank/emergency,/obj/item/scalpel,/obj/item/retractor,/obj/item/hemostat, \
-	/obj/item/cautery,/obj/item/bonegel,/obj/item/sutures)
+	/obj/item/cautery,/obj/item/bonegel,/obj/item/suture)

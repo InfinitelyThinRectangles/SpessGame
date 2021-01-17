@@ -34,7 +34,7 @@
 		/obj/item/retractor,
 		/obj/item/cautery,
 		/obj/item/bonegel,
-		/obj/item/sutures,
+		/obj/item/suture,
 		/obj/item/bonesetter,
 		/obj/item/circular_saw,
 		/obj/item/surgicaldrill,
