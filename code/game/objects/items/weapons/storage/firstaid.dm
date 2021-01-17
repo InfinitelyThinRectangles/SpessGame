@@ -167,3 +167,22 @@
 		/obj/item/suture,
 		/obj/item/stack/medical/advanced/bruise_pack,
 		)
+
+/obj/item/storage/firstaid/ifak
+	name = "IFAK"
+	desc = "That's the Individual First Aid Kit, holds anytihng you'll need to survive a injury bit longer."
+	icon_state = "ifak"
+	storage_slots = 3
+	w_class = ITEM_SIZE_SMALL
+	startswith = list(
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/chems/hypospray/autoinjector/pouch_auto/stabilizer,
+		/obj/item/chems/hypospray/autoinjector/pouch_auto/painkillers
+		)
+
+	can_hold = list(
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/chems/hypospray/autoinjector/pouch_auto/stabilizer,
+		/obj/item/chems/hypospray/autoinjector/pouch_auto/painkillers,
+		)
+
