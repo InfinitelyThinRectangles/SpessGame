@@ -294,7 +294,7 @@
 	contains = list(/obj/item/cautery,
 					/obj/item/surgicaldrill,
 					/obj/item/clothing/mask/breath/medical,
-					/obj/item/sutures,
+					/obj/item/suture,
 					/obj/item/hemostat,
 					/obj/item/scalpel,
 					/obj/item/bonegel,
