@@ -149,9 +149,9 @@
 	name = "utility knife"
 	icon = 'icons/obj/items/weapon/knives/new_knives.dmi'
 	icon_state = "utility_knife"
-	item_state = "knife"
+	item_state = "utility_knife"
 	desc = "A utility knife with a polymer handle, commonly used through human space."
 	material = null // die, bay materials
-	force = 15
+	force = 12
 	w_class = ITEM_SIZE_SMALL
 	draw_handle = FALSE
