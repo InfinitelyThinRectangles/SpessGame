@@ -145,9 +145,11 @@
 	draw_handle = FALSE
 
 // The harness knife
-/obj/item/knife/utility/harness
+/obj/item/knife/harness
 	name = "utility knife"
-	icon_state = "knife"
+	icon = 'icons/obj/items/weapon/knives/new_knives.dmi'
+	icon_state = "utility_knife"
+	item_state = "knife"
 	desc = "A utility knife with a polymer handle, commonly used through human space."
 	material = null // die, bay materials
 	force = 15

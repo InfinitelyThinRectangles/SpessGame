@@ -166,7 +166,7 @@
 		/obj/item/knife,
 	)
 
-	new /obj/item/knife/utility/harness(hold)
+	new /obj/item/knife/harness(hold)
 	new /obj/item/storage/firstaid/ifak(hold)
 
 
