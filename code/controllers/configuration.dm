@@ -924,7 +924,7 @@ var/list/gamemode_cache = list()
 	if (event_info)
 		custom_event_msg = event_info
 
-// cringe filter
+// cringe filter, credit to Matt from IS12
 
 /datum/configuration/proc/LoadChatFilter()
 	GLOB.in_character_filter = list()
