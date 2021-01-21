@@ -1124,3 +1124,8 @@ About the new airlock wires panel:
 	else
 		window_color = GLASS_COLOR
 	queue_icon_update()
+
+/obj/machinery/door/airlock/nopass
+	name = "airlock"
+	desc = "Seems to have some sort of air blocker on it."
+	atmos_canpass = CANPASS_NEVER
