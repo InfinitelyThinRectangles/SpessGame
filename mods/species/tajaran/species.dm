@@ -11,7 +11,7 @@
 	min_age = 17
 	max_age = 140
 
-	spawn_flags = SPECIES_CAN_JOIN
+	spawn_flags = SPECIES_IS_RESTRICTED // no furries allowed
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
 
 	icobase = 'mods/species/tajaran/icons/body.dmi'
@@ -36,9 +36,9 @@
 	flash_mod = 2
 
 	unarmed_attacks = list(
-		/decl/natural_attack/stomp, 
-		/decl/natural_attack/kick, 
-		/decl/natural_attack/punch, 
+		/decl/natural_attack/stomp,
+		/decl/natural_attack/kick,
+		/decl/natural_attack/punch,
 		/decl/natural_attack/bite/sharp
 	)
 
@@ -110,7 +110,7 @@
 		slot_undershirt_str = list("[NORTH]" = list("x" =  0, "y" = -2), "[EAST]" = list("x" = 0, "y" = -2), "[SOUTH]" = list("x" =  0, "y" = -2),  "[WEST]" = list("x" = 0, "y" = -2))
 	)
 	. = ..()
-	
+
 
 /obj/item/organ/internal/eyes/taj
 	eye_blend = ICON_MULTIPLY

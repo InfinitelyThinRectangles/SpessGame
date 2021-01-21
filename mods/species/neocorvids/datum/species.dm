@@ -29,7 +29,7 @@
 	blood_volume = 320
 	hunger_factor = 0.1
 
-	spawn_flags = SPECIES_CAN_JOIN
+	spawn_flags = SPECIES_IS_RESTRICTED // no bib allowed
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_EYE_COLOR
 	bump_flag = MONKEY
 	swap_flags = MONKEY|SIMPLE_ANIMAL
