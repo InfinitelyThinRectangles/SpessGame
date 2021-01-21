@@ -164,27 +164,6 @@ proc/get_radio_key_from_channel(var/channel)
 			return say_dead(message)
 		return
 
-// cringe filter by matt, thanks matt
-
-	if(GLOB.in_character_filter.len) //&& !forced)
-		if(findtext(message, config.ic_filter_regex))
-			// let's try to be a bit more informative!
-			var/warning_message = "<span class='warning'>Bro you just tried to say cringe! You're going to loose metabuddies! Check the server rules!</br>The bolded terms are disallowed: &quot;"
-			var/list/words = splittext(message, " ")
-			var/cringe = ""
-			for (var/word in words)
-				if (findtext(word, config.ic_filter_regex))
-					warning_message = "[warning_message]<b>[word]</b> "
-					cringe += "/<b>[word]</b>"
-				else
-					warning_message = "[warning_message][word] "
-
-
-			warning_message = trim(warning_message)
-			to_chat(src, "[warning_message]&quot;</span>")
-			log_and_message_admins("[src] just tried to say cringe: [cringe]", src)
-			return
-
 	if(findlasttextEx(message, get_prefix_key(/decl/prefix/custom_emote)) == 1)
 		return emote(copytext(message,2))
 

@@ -99,7 +99,6 @@ var/list/gamemode_cache = list()
 	var/discordurl
 	var/githuburl
 	var/issuereporturl
-	var/static/regex/ic_filter_regex // cringe filter stuff
 
 	var/forbid_singulo_possession = 0
 
@@ -854,8 +853,6 @@ var/list/gamemode_cache = list()
 	if(fps <= 0)
 		fps = initial(fps)
 
-	LoadChatFilter()
-
 /datum/configuration/proc/loadsql(filename)  // -- TLE
 	var/list/Lines = file2list(filename)
 	for(var/t in Lines)
@@ -923,18 +920,3 @@ var/list/gamemode_cache = list()
 
 	if (event_info)
 		custom_event_msg = event_info
-
-// cringe filter, credit to Matt from IS12
-
-/datum/configuration/proc/LoadChatFilter()
-	GLOB.in_character_filter = list()
-
-	for(var/line in world.file2list("config/in_character_filter.txt"))
-		if(!line)
-			continue
-		if(findtextEx(line,"#",1,2))
-			continue
-		GLOB.in_character_filter += line
-
-	if(!ic_filter_regex && GLOB.in_character_filter.len)
-		ic_filter_regex = regex("\\b([jointext(GLOB.in_character_filter, "|")])\\b", "i")
