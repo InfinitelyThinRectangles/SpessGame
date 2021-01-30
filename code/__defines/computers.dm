@@ -1,6 +1,6 @@
 #define NETWORK_MAC  uniqueness_repository.Generate(/datum/uniqueness_generator/hex)
 									// Network allowed actions
-#define NETWORK_SOFTWAREDOWNLOAD 	1 	// Downloads of software
+#define NETWORK_SOFTWAREDOWNLOAD 	1 	// Downloads of softwareb
 #define NETWORK_COMMUNICATION 		2	// Communication (messaging)
 #define NETWORK_SYSTEMCONTROL 		4	// Control of various systems, RCon, air alarm control, etc.
 #define NETWORK_ALL_FEATURES		(NETWORK_SOFTWAREDOWNLOAD|NETWORK_COMMUNICATION|NETWORK_SYSTEMCONTROL)

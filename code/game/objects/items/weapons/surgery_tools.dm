@@ -220,7 +220,7 @@
 	if(!user.doing_something)
 		user.doing_something = TRUE
 		if(affected.status & ORGAN_ARTERY_CUT)//Fix arteries first,
-			user.visible_message("<span class='notice'>[user] begins to suture [H]'s arteries.")
+			user.visible_message("<span class='notice'>[user] begins to suture [H]'s arteries.</span>")
 	//		playsound(src, 'sound/weapons/suture.ogg', 70, FALSE)
 			if(do_mob(user, H, 50))
 				user.visible_message("<span class='notice'>[user] has patched the [affected.artery_name] in [H]'s [affected.name] with \the [src.name].</span>", \
@@ -230,7 +230,7 @@
 		else//Then fix wounds if they do it again.
 			for(var/datum/wound/W in affected.wounds)
 				if(W.damage)
-					user.visible_message("<span class='notice'>[user] begins to suture up [H]'s wounds.")
+					user.visible_message("<span class='notice'>[user] begins to suture up [H]'s wounds.</span>")
 				//	playsound(src, 'sound/weapons/suture.ogg', 40, FALSE)
 					H.custom_pain("The pain in your [affected.name] is unbearable!",rand(50, 65),affecting = affected)
 					if(do_mob(user, H, 50))
