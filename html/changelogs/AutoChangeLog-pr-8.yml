@@ -1,4 +1,0 @@
-author: SplinterGP
-delete-after: true
-changes:
-  - bugfix: fixes changelog generation, hopefully
